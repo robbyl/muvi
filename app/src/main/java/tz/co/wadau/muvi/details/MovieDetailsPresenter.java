@@ -1,6 +1,6 @@
 package tz.co.wadau.muvi.details;
 
-import tz.co.wadau.muvi.Movie;
+import tz.co.wadau.muvi.models.Movie;
 
 /**
  * @author arun

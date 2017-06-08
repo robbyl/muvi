@@ -14,11 +14,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import tz.co.wadau.muvi.BaseApplication;
-import tz.co.wadau.muvi.Movie;
-import tz.co.wadau.muvi.R;
-import tz.co.wadau.muvi.listing.sorting.SortingDialogFragment;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,9 +21,12 @@ import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import tz.co.wadau.muvi.BaseApplication;
+import tz.co.wadau.muvi.R;
+import tz.co.wadau.muvi.listing.sorting.SortingDialogFragment;
+import tz.co.wadau.muvi.models.Movie;
 
-public class MoviesListingFragment extends Fragment implements MoviesListingView
-{
+public class MoviesListingFragment extends Fragment implements MoviesListingView {
     @Inject
     MoviesListingPresenter moviesPresenter;
 
@@ -39,21 +37,18 @@ public class MoviesListingFragment extends Fragment implements MoviesListingView
     private List<Movie> movies = new ArrayList<>(20);
     private Callback callback;
 
-    public MoviesListingFragment()
-    {
+    public MoviesListingFragment() {
         // Required empty public constructor
     }
 
     @Override
-    public void onAttach(Context context)
-    {
+    public void onAttach(Context context) {
         super.onAttach(context);
         callback = (Callback) context;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         setRetainInstance(true);
@@ -61,8 +56,7 @@ public class MoviesListingFragment extends Fragment implements MoviesListingView
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_movies, container, false);
         ButterKnife.bind(this, rootView);
         initLayoutReferences();
@@ -70,17 +64,14 @@ public class MoviesListingFragment extends Fragment implements MoviesListingView
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState)
-    {
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         moviesPresenter.setView(this);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        switch (item.getItemId())
-        {
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
             case R.id.action_sort:
                 displaySortingOptions();
         }
@@ -88,22 +79,18 @@ public class MoviesListingFragment extends Fragment implements MoviesListingView
         return super.onOptionsItemSelected(item);
     }
 
-    private void displaySortingOptions()
-    {
+    private void displaySortingOptions() {
         DialogFragment sortingDialogFragment = SortingDialogFragment.newInstance(moviesPresenter);
         sortingDialogFragment.show(getFragmentManager(), "Select Quantity");
     }
 
-    private void initLayoutReferences()
-    {
+    private void initLayoutReferences() {
         moviesListing.setHasFixedSize(true);
 
         int columns;
-        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
-        {
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             columns = 2;
-        } else
-        {
+        } else {
             columns = getResources().getInteger(R.integer.no_of_columns);
         }
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity(), columns);
@@ -114,8 +101,7 @@ public class MoviesListingFragment extends Fragment implements MoviesListingView
     }
 
     @Override
-    public void showMovies(List<Movie> movies)
-    {
+    public void showMovies(List<Movie> movies) {
         this.movies.clear();
         this.movies.addAll(movies);
         moviesListing.setVisibility(View.VISIBLE);
@@ -124,47 +110,40 @@ public class MoviesListingFragment extends Fragment implements MoviesListingView
     }
 
     @Override
-    public void loadingStarted()
-    {
+    public void loadingStarted() {
         Snackbar.make(moviesListing, R.string.loading_movies, Snackbar.LENGTH_SHORT).show();
     }
 
     @Override
-    public void loadingFailed(String errorMessage)
-    {
+    public void loadingFailed(String errorMessage) {
         Snackbar.make(moviesListing, errorMessage, Snackbar.LENGTH_INDEFINITE).show();
     }
 
     @Override
-    public void onMovieClicked(Movie movie)
-    {
+    public void onMovieClicked(Movie movie) {
         callback.onMovieClicked(movie);
     }
 
     @Override
-    public void onDestroyView()
-    {
+    public void onDestroyView() {
         super.onDestroyView();
         moviesPresenter.destroy();
         ButterKnife.unbind(this);
     }
 
     @Override
-    public void onDetach()
-    {
+    public void onDetach() {
         callback = null;
         super.onDetach();
     }
 
     @Override
-    public void onDestroy()
-    {
+    public void onDestroy() {
         super.onDestroy();
         ((BaseApplication) getActivity().getApplication()).releaseListingComponent();
     }
 
-    public interface Callback
-    {
+    public interface Callback {
         void onMoviesLoaded(Movie movie);
 
         void onMovieClicked(Movie movie);

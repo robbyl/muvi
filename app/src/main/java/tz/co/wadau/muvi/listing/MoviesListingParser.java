@@ -3,7 +3,7 @@ package tz.co.wadau.muvi.listing;
 import android.support.annotation.NonNull;
 
 import tz.co.wadau.muvi.Api;
-import tz.co.wadau.muvi.Movie;
+import tz.co.wadau.muvi.models.Movie;
 
 import org.json.JSONArray;
 import org.json.JSONException;

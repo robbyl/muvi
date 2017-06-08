@@ -3,7 +3,7 @@ package tz.co.wadau.muvi.listing;
 import android.support.annotation.NonNull;
 
 import tz.co.wadau.muvi.Api;
-import tz.co.wadau.muvi.Movie;
+import tz.co.wadau.muvi.models.Movie;
 import tz.co.wadau.muvi.favorites.FavoritesInteractor;
 import tz.co.wadau.muvi.listing.sorting.SortType;
 import tz.co.wadau.muvi.listing.sorting.SortingOptionStore;

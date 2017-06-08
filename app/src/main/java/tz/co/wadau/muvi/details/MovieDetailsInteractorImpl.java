@@ -1,8 +1,8 @@
 package tz.co.wadau.muvi.details;
 
 import tz.co.wadau.muvi.Api;
-import tz.co.wadau.muvi.Review;
-import tz.co.wadau.muvi.Video;
+import tz.co.wadau.muvi.models.Review;
+import tz.co.wadau.muvi.models.Video;
 import tz.co.wadau.muvi.network.RequestGenerator;
 import tz.co.wadau.muvi.network.RequestHandler;
 

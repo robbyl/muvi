@@ -1,4 +1,4 @@
-package com.esoxjem.movieguide;
+package tz.co.wadau.muvi.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
-import tz.co.wadau.muvi.Movie;
+import tz.co.wadau.muvi.models.Movie;
 import tz.co.wadau.muvi.R;
 
 import java.util.List;

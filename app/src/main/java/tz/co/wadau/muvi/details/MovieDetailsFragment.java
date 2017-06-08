@@ -23,10 +23,10 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import tz.co.wadau.muvi.BaseApplication;
 import tz.co.wadau.muvi.Constants;
-import tz.co.wadau.muvi.Movie;
+import tz.co.wadau.muvi.models.Movie;
 import tz.co.wadau.muvi.R;
-import tz.co.wadau.muvi.Review;
-import tz.co.wadau.muvi.Video;
+import tz.co.wadau.muvi.models.Review;
+import tz.co.wadau.muvi.models.Video;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

@@ -10,7 +10,7 @@ import tz.co.wadau.muvi.R;
 import tz.co.wadau.muvi.Constants;
 import tz.co.wadau.muvi.details.MovieDetailsActivity;
 import tz.co.wadau.muvi.details.MovieDetailsFragment;
-import tz.co.wadau.muvi.Movie;
+import tz.co.wadau.muvi.models.Movie;
 
 public class MoviesListingActivity extends AppCompatActivity implements MoviesListingFragment.Callback
 {

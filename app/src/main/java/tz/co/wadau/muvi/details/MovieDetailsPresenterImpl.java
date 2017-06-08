@@ -1,8 +1,8 @@
 package tz.co.wadau.muvi.details;
 
-import tz.co.wadau.muvi.Movie;
-import tz.co.wadau.muvi.Review;
-import tz.co.wadau.muvi.Video;
+import tz.co.wadau.muvi.models.Movie;
+import tz.co.wadau.muvi.models.Review;
+import tz.co.wadau.muvi.models.Video;
 import tz.co.wadau.muvi.favorites.FavoritesInteractor;
 import tz.co.wadau.muvi.util.RxUtils;
 

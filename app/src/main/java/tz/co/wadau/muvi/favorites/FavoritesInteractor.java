@@ -1,6 +1,6 @@
 package tz.co.wadau.muvi.favorites;
 
-import tz.co.wadau.muvi.Movie;
+import tz.co.wadau.muvi.models.Movie;
 
 import java.util.List;
 

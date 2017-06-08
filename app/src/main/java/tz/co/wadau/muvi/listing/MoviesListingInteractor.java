@@ -1,15 +1,13 @@
 package tz.co.wadau.muvi.listing;
 
-import tz.co.wadau.muvi.Movie;
-
 import java.util.List;
 
 import rx.Observable;
+import tz.co.wadau.muvi.models.Movie;
 
 /**
  * @author arun
  */
-public interface MoviesListingInteractor
-{
+public interface MoviesListingInteractor {
     Observable<List<Movie>> fetchMovies();
 }

@@ -7,7 +7,7 @@ import android.view.MenuItem;
 
 import tz.co.wadau.muvi.R;
 import tz.co.wadau.muvi.Constants;
-import tz.co.wadau.muvi.Movie;
+import tz.co.wadau.muvi.models.Movie;
 
 public class MovieDetailsActivity extends AppCompatActivity
 {

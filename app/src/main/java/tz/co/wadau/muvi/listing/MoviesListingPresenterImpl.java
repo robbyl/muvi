@@ -1,6 +1,6 @@
 package tz.co.wadau.muvi.listing;
 
-import tz.co.wadau.muvi.Movie;
+import tz.co.wadau.muvi.models.Movie;
 import tz.co.wadau.muvi.util.RxUtils;
 
 import java.util.List;

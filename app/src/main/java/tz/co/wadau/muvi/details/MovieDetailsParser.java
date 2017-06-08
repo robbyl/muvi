@@ -1,7 +1,7 @@
 package tz.co.wadau.muvi.details;
 
-import tz.co.wadau.muvi.Review;
-import tz.co.wadau.muvi.Video;
+import tz.co.wadau.muvi.models.Review;
+import tz.co.wadau.muvi.models.Video;
 
 import org.json.JSONArray;
 import org.json.JSONException;

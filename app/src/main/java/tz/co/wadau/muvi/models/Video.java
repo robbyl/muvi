@@ -1,7 +1,11 @@
-package com.esoxjem.movieguide;
+package tz.co.wadau.muvi.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import tz.co.wadau.muvi.Api;
+import tz.co.wadau.muvi.Constants;
+
 
 /**
  * @author arun
